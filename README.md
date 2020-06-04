@@ -71,14 +71,14 @@ int CScriptMgr::Init()
     docgenOptions.includeArrayInterface = false;      // keeps the example clean
     docgenOptions.includeStringInterface = false;     // keeps the example clean
     docgenOptions.includeWeakRefInterface = false;    // keeps the example clean
-    docgenOptions.htmlSafe = false;                                // we want to be able to style ourselves with tags, e.g. <b></b>
+    docgenOptions.htmlSafe = false;                   // we want to be able to style ourselves with tags, e.g. <b></b>
     DocumentationGenerator docGen(engine, docgenOptions);
 
     /* ... continued ... */
 
     // Register the game object. The scripts cannot create these directly, so there is no factory function.
     r = engine->RegisterObjectType("CGameObj", 0, asOBJ_REF); assert( r >= 0 );
-    r = docGen.DocumentObjectType(r, "Represents a game object."); assert( r >= 0 );
+    r = docGen.DocumentObjectType(r, "Represents a <b>game</b> object."); assert( r >= 0 );
     r = engine->RegisterObjectBehaviour("CGameObj", asBEHAVE_ADDREF, "void f()", asMETHOD(CGameObj, AddRef), asCALL_THISCALL); assert( r >= 0 );
     r = docGen.DocumentObjectMethod(r, "Constructs a empty game object."); assert( r >= 0 );
 
@@ -89,7 +89,7 @@ int CScriptMgr::Init()
     r = engine->RegisterObjectMethod("CGameObj", "int get_y() const", asMETHOD(CGameObj, GetY), asCALL_THISCALL); assert( r >= 0 );
     r = docGen.DocumentObjectMethod(r, "Returns current vertical position for object in-game"); assert( r >= 0 );
     r = engine->RegisterObjectMethod("CGameObj", "bool Move(int dx, int dy)", asMETHOD(CGameObj, Move), asCALL_THISCALL); assert( r >= 0 );
-    r = docGen.DocumentObjectMethod(r, "Will attempt to move the object by the given amount, returns whether or not the move was legal."); assert( r >= 0 );
+    r = docGen.DocumentObjectMethod(r, "Will attempt to move the object by the given amount, returns <b>whether or not the move was legal</b>."); assert( r >= 0 );
 
     /* ... continued ... */
 
