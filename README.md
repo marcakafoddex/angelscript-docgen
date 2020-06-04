@@ -45,6 +45,10 @@ This plugin is released under the MIT license.
 - Register documentation by calling the proper methods on the ```DocumentationGenerator``` object (see example below)
 - Call ```Generate()``` on the ```DocumentationGenerator``` object
 
+## API Documentation
+
+See ```docgen.h``` for documentation on the ```ScriptDocumentationOptions``` and ```DocumentationGenerator``` classes. Full documentation is available there.
+
 ## Example Usage
 
 The following is an exerpt of a modified version of ```scriptmgr.cpp``` from the example game that comes with AngelScript. The basic idea is that you register a type, and use the result value (usually r in AngelScript example code) to register the documentation for the object type, behavior, method. Then when you are done you call generate on the documentation generator to actually create the output file.
